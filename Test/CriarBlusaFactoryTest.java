@@ -10,17 +10,17 @@ public class CriarBlusaFactoryTest {
             ICriarBlusa blusa = CriarBlusaFactory.obterMetodo("Reformatar");
             fail();
         } catch (IllegalArgumentException e){
-            assertEquals("Método inexistente", e.getMessage());
+            assertEquals("Opção inexistente", e.getMessage());
         }
     }
 
     @Test
     public void retornaExcecaoMetodoInvalido() {
         try{
-            ICriarBlusa blusa = CriarBlusaFactory.obterMetodo("BlusaJordan");
+            ICriarBlusa blusa = CriarBlusaFactory.obterMetodo("Casaco");
             fail();
         } catch (IllegalArgumentException e) {
-            assertEquals("Método inválido", e.getMessage());
+            assertEquals("Opção inválida", e.getMessage());
         }
     }
 

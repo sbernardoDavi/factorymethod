@@ -5,13 +5,13 @@ public class CriarBlusaFactory {
         Object objeto = null;
 
         try{
-            classe = Class.forName("factorymethod.Criar" + metodo);
-            objeto = classe.getDeclaredConstructor().newInstance();
+            classe = Class.forName("Criar"+metodo);
+            objeto = classe.newInstance();
         } catch (Exception ex){
-            throw new IllegalArgumentException("Método inexistente");
+            throw new IllegalArgumentException("Opção inexistente");
         }
         if(!(objeto instanceof ICriarBlusa)){
-            throw new IllegalArgumentException(("Método inválido"));
+            throw new IllegalArgumentException(("Opção inválida"));
         }
         return (ICriarBlusa) objeto;
     }
